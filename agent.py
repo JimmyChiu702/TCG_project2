@@ -155,7 +155,7 @@ class learning_agent(weight_agent):
 
     def update(self, state, target):
         error = target - self.evaluate(state)
-        delta = (self.alpha / 8) * error
+        delta = (self.alpha / 16) * error
         for i in range(self.num_tuples):
             self.net[i][self.encode(state.state, self.tuples[i])] += delta
         return
